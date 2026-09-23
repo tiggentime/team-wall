@@ -29,14 +29,14 @@ page picks up your changes when you refresh.
 | `app/globals.css` | All the styles. |
 | `scripts/check.mjs` | Validates member files. Runs on every PR. |
 
-## Our workflow (the rules)
+## Workflow for today (the rules)
 
 1. Never commit to `main` directly. `main` is protected and will refuse your push.
 2. One branch per task, named `yourname/short-description`
    (e.g. `sam/add-card`, `sam/fix-blank-shoutout`).
 3. Run the app and see your change working before you push.
 4. Run `npm run check` before you push.
-5. Open a pull request, fill in the template, and ask one teammate to review.
+5. Open a pull request, fill in the template, and ask one TL to review.
 6. Merge only after an approval and a green check.
 7. After a merge, everyone updates: `git switch main && git pull`.
 
@@ -75,6 +75,12 @@ GitHub prints a link after the push. Open it to create your pull request.
 | Unstage a file | `git restore --staged <file>` |
 | Fix my last commit message (before pushing) | `git commit --amend` |
 | Start over on a branch from fresh main | `git switch main && git pull && git switch -c yourname/new-try` |
+
+## Round 2: the merge conflict!!
+
+1. Create a branch from fresh `main`: `git switch -c yourname/shoutout`
+2. Add one line to the **end** of `data/shoutouts.txt` (a shoutout to a teammate, your favorite sentence, a funny joke... your options are limitless).
+3. Commit, push, open a PR.
 
 ## Resolving a merge conflict
 
