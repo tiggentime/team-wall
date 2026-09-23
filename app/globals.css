@@ -1,0 +1,77 @@
+:root {
+  --paper: #eef3f8;
+  --grid: #d6e1ec;
+  --ink: #1d2a3a;
+  --muted: #5b6b7e;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, sans-serif;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  min-height: 100vh;
+}
+
+.wall {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.wall-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.wall-sub {
+  margin: 0 0 40px;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+/* Index cards, each with the member's own colour as a top stripe. */
+.card {
+  --accent: #999;
+  background: var(--card);
+  border-top: 10px solid var(--accent);
+  padding: 20px 20px 16px;
+  box-shadow: 2px 3px 0 rgba(29, 42, 58, 0.12);
+  transform: rotate(-1deg);
+}
+.card:nth-child(even) { transform: rotate(1.2deg); }
+.card:nth-child(3n) { transform: rotate(-0.4deg); }
+
+.card-emoji { font-size: 2.25rem; line-height: 1; }
+.card-name { font-size: 1.35rem; margin: 12px 0 2px; }
+.card-role { margin: 0 0 12px; color: var(--accent); font-weight: 700; }
+.card-fact { margin: 0 0 16px; line-height: 1.45; }
+.card-handle { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+.shoutouts {
+  margin-top: 64px;
+  background: var(--card);
+  padding: 24px 28px;
+  box-shadow: 2px 3px 0 rgba(29, 42, 58, 0.12);
+}
+.shoutouts h2 { margin: 0 0 12px; }
+.shoutouts ul { margin: 0; padding-left: 20px; line-height: 1.8; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transform: none !important; }
+}
